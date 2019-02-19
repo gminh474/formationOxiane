@@ -9,10 +9,11 @@ console.log('Demarrage');
 console.log('Redis sur ' +process.env.REDIS_PORT_6379_TCP_ADDR + ':' + process.env.REDIS_PORT_6379_TCP_PORT);
 
 // Utiliser l'entree cree dans le /etc/hosts
-var client = redis.createClient(6379, redis);
+var client = redis.createClient('6379', 'redis');
 
 
 app.get('/', function(req, res, next) {
+  console.log("*********** beep *********");
   client.incr('compteur', function(err, compteur) {
     if(err) return next(err);
     res.send('compteur = ' + compteur);
