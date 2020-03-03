@@ -2,6 +2,7 @@ version: '3'
 services:
 
   nginx:
+    image: gminh06791n/formation/oxiane/nginx:1.0
     build: ./nginx
     ports:
       - "80:80"
@@ -16,6 +17,7 @@ services:
       - toto
 
   node1:
+    image: gminh06791n/formation/oxiane/app:1.0
     build: ./app
     ports:
       - "8080"
@@ -23,6 +25,7 @@ services:
       - toto
 
   node2:
+    image: gminh06791n/formation/oxiane/app:1.0
     build: ./app
     ports:
       - "8080"
